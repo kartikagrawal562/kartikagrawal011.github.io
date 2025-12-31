@@ -19,8 +19,15 @@
             --text-muted: #64748b;
         }
 
+        /* Essential Reset for Mobile Fitting */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        html, body { overflow-x: hidden; width: 100%; position: relative; scroll-behavior: smooth; }
+        
+        html, body { 
+            overflow-x: hidden; 
+            width: 100%; 
+            position: relative; 
+            scroll-behavior: smooth; 
+        }
 
         body { background-color: var(--body-bg); color: var(--text-dark); }
 
@@ -45,6 +52,7 @@
 
         .nav-links { display: flex; list-style: none; gap: 25px; }
         .nav-links a { text-decoration: none; color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
 
         /* --- MOBILE MENU --- */
         .menu-btn { display: none; color: white; font-size: 1.5rem; cursor: pointer; z-index: 2001; }
@@ -84,7 +92,6 @@
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
         }
 
-        /* Restoring your original profile card style */
         .profile-card {
             background: #fff; border-radius: 30px; padding: 45px 30px;
             text-align: center; transition: 0.5s;
@@ -97,7 +104,6 @@
         .img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 35px; }
         .role-badge { display: inline-block; background: #f0fdf4; color: var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; border: 1px solid #dcfce7; }
 
-        /* RESTORING THE TAGLINE QUOTE STYLE */
         .leadership-quote {
             text-align: center; max-width: 900px; margin: 0 auto 80px;
             padding: 40px; border-radius: 30px; background: #fff;
@@ -114,6 +120,9 @@
 
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 15px; overflow: hidden; background: #000; }
         .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+        .quote-card { background: #fff; padding: 30px; border-radius: 20px; border-left: 5px solid var(--primary); position: relative; }
+        .quote-text { font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 10px; }
 
         .organizer-footer { background: var(--header-footer-bg); padding: 60px 5% 30px; text-align: center; }
         .org-logo { height: 70px; background: white; padding: 10px; border-radius: 10px; margin: 10px; }
@@ -140,7 +149,7 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="participants.html">Participants</a></li>
         <li><a href="vision.html">Vision</a></li>
-        <li><a href="About.html">About</a></li>
+        <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
@@ -172,16 +181,44 @@
 </section>
 
 <section class="video-showcase">
+    <div style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+        <h2 style="font-size: 2.5rem; color: var(--header-footer-bg); font-weight: 800;">AI-Driven Innovation</h2>
+        <p style="color: var(--text-muted);">Visualizing the future of loT: Where Hardware Mechanics meets Software Intelligence.</p>
+    </div>
     <div class="video-grid">
         <div class="video-card" data-aos="fade-right">
             <div class="video-wrapper"><video controls><source src="1.mp4" type="video/mp4"></video></div>
             <h3>Hardware Intelligence</h3>
-            <p>This AI-generated simulation demonstrates the complex interplay of sensors, actuators, and circuitry. It illustrates how raw data is collected from the physical world and prepared for digital processing in advanced IoT ecosystems.</p>
+            <p></p>This AI-generated simulation demonstrates the complex interplay of sensors, actuators, and circuitry. It illustrates how raw data is collected from the physical world and prepared for digital processing in advanced IoT ecosystems.
         </div>
         <div class="video-card" data-aos="fade-left">
             <div class="video-wrapper"><video controls><source src="2.mp4" type="video/mp4"></video></div>
             <h3>Software Synergy</h3>
             <p>Witness the digital brain in action. This visualization explores the flow of data through cloud networks and algorithmic logic layers, showcasing how software interprets hardware signals to execute smart, automated decisions.</p>
+        </div>
+    </div>
+</section>
+
+<section class="motivation-section">
+    <div style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+        <h2 style="font-size: 2.2rem; color: var(--header-footer-bg); font-weight: 800;">Fuel for Innovation</h2>
+        <p style="color: var(--text-muted);">Words that drive us to build the future.</p>
+    </div>
+    <div class="quote-grid">
+        <div class="quote-card" data-aos="zoom-in">
+            <i class="fas fa-quote-right"></i>
+            <p class="quote-text">"Innovation distinguishes between a leader and a follower. At TechX, we choose to lead."</p>
+            <span class="quote-author">-Inspired by Steve Jobs</span>
+        </div>
+        <div class="quote-card" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-quote-right"></i>
+            <p class="quote-text">"The best way to predict the future is to invent it. We don't just learn loT; we build it."</p>
+            <span class="quote-author">- Alan Kay</span>
+        </div>
+        <div class="quote-card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-quote-right"></i>
+            <p class="quote-text">"Engineering is the closest thing to magic that exists in the world."</p>
+            <span class="quote-author">- Elon Musk</span>
         </div>
     </div>
 </section>
@@ -220,42 +257,15 @@
         <p style="color:var(--text-muted); font-weight:600;">STUDENT COORDINATORS</p>
     </div>
     <div class="student-grid">
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="4.jpeg"></div><h3>Kartik Agrawal</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 5 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="5.jpeg"></div><h3>Jay Yeshi</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="6.jpeg"></div><h3>Patel Meet</h3><span class="role-badge">Coordinator</span>
-            <p>IT | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="7.jpeg"></div><h3>Drashti Gadhvi</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="8.jpeg"></div><h3>Valani Jayesh</h3><span class="role-badge">Coordinator</span>
-            <p>IT | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="9.jpeg"></div><h3>Jash Kumbhani</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="10.jpeg"></div><h3>Naisargi Manseta</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="11.jpeg"></div><h3>Rajput Anchal</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 3 | Degree</p>
-        </div>
-        <div class="profile-card">
-            <div class="img-wrapper"><img src="12.jpeg"></div><h3>Sonal Chauhan</h3><span class="role-badge">Coordinator</span>
-            <p>CE | Sem 3 | Degree</p>
-        </div>
+        <div class="profile-card"><div class="img-wrapper"><img src="4.jpeg"></div><h3>Kartik Agrawal</h3><span class="role-badge">Coordinator</span><p>CE | Sem 5 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="5.jpeg"></div><h3>Jay Yeshi</h3><span class="role-badge">Coordinator</span><p>CE | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="6.jpeg"></div><h3>Patel Meet</h3><span class="role-badge">Coordinator</span><p>IT | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="7.jpeg"></div><h3>Drashti Gadhvi</h3><span class="role-badge">Coordinator</span><p>CE | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="8.jpeg"></div><h3>Valani Jayesh</h3><span class="role-badge">Coordinator</span><p>IT | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="9.jpeg"></div><h3>Jash Kumbhani</h3><span class="role-badge">Coordinator</span><p>CE | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="10.jpeg"></div><h3>Naisargi Manseta</h3><span class="role-badge">Coordinator</span><p>CE | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="11.jpeg"></div><h3>Rajput Anchal</h3><span class="role-badge">Coordinator</span><p>CE | Sem 3 | Degree</p></div>
+        <div class="profile-card"><div class="img-wrapper"><img src="12.jpeg"></div><h3>Sonal Chauhan</h3><span class="role-badge">Coordinator</span><p>CE | Sem 3 | Degree</p></div>
     </div>
 </section>
 
@@ -272,7 +282,6 @@
 <script>
     AOS.init({ duration: 800, once: true });
     
-    // Background Particles
     const canvas = document.getElementById('iot-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -305,7 +314,6 @@
     }
     init(); animate();
 
-    // Close menu on click
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => { document.getElementById('menu-toggle').checked = false; });
     });
