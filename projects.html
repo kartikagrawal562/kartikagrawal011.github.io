@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Projects | TechXᴰᴹ Innovation Club</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,12 +20,18 @@
             --glass-white: rgba(255, 255, 255, 0.95);
         }
 
+        /* Essential Reset for Mobile Fitting */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        html, body {
+            overflow-x: hidden; /* Removes side scrolling */
+            width: 100%;
+            position: relative;
+        }
 
         body {
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             color: var(--text-dark);
-            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -36,23 +42,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 8%;
+            padding: 0 5%;
             height: 85px;
             background-color: var(--header-footer-bg);
             border-bottom: 2px solid var(--primary);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 2000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 100%;
         }
 
-        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
-        .logo-img { height: 50px; filter: drop-shadow(0 0 5px var(--primary)); }
-        .logo-area h2 { font-size: 1.1rem; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; }
+        .logo-area { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
+        .logo-img { height: 40px; filter: drop-shadow(0 0 5px var(--primary)); }
+        .logo-area h2 { font-size: 0.9rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; }
 
-        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
         .nav-links a { 
-            text-decoration: none; color: #cbd5e1; font-size: 0.85rem; 
+            text-decoration: none; color: #cbd5e1; font-size: 0.75rem; 
             text-transform: uppercase; font-weight: 500; transition: 0.3s; 
         }
         .nav-links a:hover { color: var(--primary); }
@@ -60,34 +67,36 @@
         /* --- Header --- */
         .project-hero {
             text-align: center;
-            padding: 100px 5% 50px;
+            padding: 50px 15px 20px;
         }
 
         .hero-title {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 6vw, 3rem);
             color: var(--header-footer-bg);
             font-weight: 800;
+            line-height: 1.2;
         }
 
-        .underline { width: 70px; height: 5px; background: var(--primary); margin: 15px auto; border-radius: 10px; }
+        .underline { width: 60px; height: 5px; background: var(--primary); margin: 10px auto; border-radius: 10px; }
 
         /* --- Section Styling --- */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 20px 100px;
+            padding: 10px 15px 80px;
             flex-grow: 1;
         }
 
         .category-header {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin: 60px 0 30px;
+            gap: 12px;
+            margin: 30px 0 20px;
         }
 
         .category-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.1rem;
             color: var(--header-footer-bg);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -102,65 +111,68 @@
         /* --- Grid & Cards --- */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
         }
 
         .project-card {
             background: var(--glass-white);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
             transition: 0.4s ease;
             border: 1px solid rgba(255,255,255,0.5);
             display: flex;
             flex-direction: column;
+            height: 100%;
+            min-width: 0; /* Prevents overflow inside grid */
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
             border-color: var(--primary);
         }
 
         .project-icon {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             color: var(--primary-dark);
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .project-card h3 {
-            font-size: 1.25rem;
+            font-size: 0.9rem;
             color: var(--header-footer-bg);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 700;
             text-transform: uppercase;
-            min-height: 3rem;
+            min-height: 2rem;
             display: flex;
             align-items: center;
+            line-height: 1.3;
         }
 
         .project-card p {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            margin-bottom: 25px;
-            line-height: 1.6;
+            margin-bottom: 15px;
+            line-height: 1.4;
             flex-grow: 1;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 4px;
             margin-top: auto;
         }
 
         .tag {
             background: #e2e8f0;
             color: var(--text-dark);
-            font-size: 0.7rem;
-            padding: 4px 12px;
-            border-radius: 5px;
+            font-size: 0.6rem;
+            padding: 2px 8px;
+            border-radius: 4px;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -168,25 +180,44 @@
         /* --- Footer --- */
         .organizer-footer {
             background-color: var(--header-footer-bg);
-            padding: 80px 8% 40px;
+            padding: 50px 5% 30px;
             text-align: center;
+            width: 100%;
         }
 
-        .organized-by-text { color: var(--primary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px; font-weight: 700; }
-        .organizer-logos { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; align-items: center; }
-        .org-logo { height: 80px; background: white; padding: 12px; border-radius: 10px; transition: 0.3s; }
-        .org-logo:hover { transform: scale(1.05); }
+        .organized-by-text { color: var(--primary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 700; }
+        .organizer-logos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; align-items: center; }
+        .org-logo { height: 50px; background: white; padding: 6px; border-radius: 8px; }
 
-        .menu-icon { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+        /* --- MOBILE MENU & GRID ADJUSTMENTS --- */
+        .menu-icon { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
         @media (max-width: 992px) {
+            .navbar { padding: 0 15px; }
+            .menu-icon { display: block; z-index: 2001; }
             .nav-links { 
-                position: fixed; top: 85px; left: -100%; 
+                position: fixed; top: 0; right: -100%; 
                 flex-direction: column; background: var(--header-footer-bg); 
-                width: 100%; height: 100vh; padding: 40px; transition: 0.4s; 
+                width: 80%; height: 100vh; padding: 100px 30px; 
+                transition: 0.4s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                justify-content: flex-start;
             }
-            .nav-links.active { left: 0; }
-            .menu-icon { display: block; }
+            .nav-links.active { right: 0; }
+            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .nav-links a { display: block; padding: 15px 0; font-size: 1rem; }
+            
+            /* High-Performance 2-column grid for Mobile */
+            .project-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .project-card { padding: 15px; border-radius: 15px; }
+            .project-card h3 { font-size: 0.8rem; min-height: 2.2rem; }
+            .project-card p { font-size: 0.7rem; margin-bottom: 10px; }
+        }
+
+        @media (max-width: 480px) {
+            .logo-area h2 { font-size: 0.75rem; letter-spacing: 1px; }
+            .category-header h2 { font-size: 1rem; }
+            .project-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .project-card { padding: 12px 10px; }
         }
     </style>
 </head>
@@ -204,7 +235,7 @@
         <li><a href="vision.html">Vision</a></li>
         <li><a href="About.html">About</a></li>
     </ul>
-    <div class="menu-icon" onclick="document.getElementById('navLinks').classList.toggle('active')">
+    <div class="menu-icon" id="menuBtn">
         <i class="fas fa-bars"></i>
     </div>
 </nav>
@@ -217,7 +248,7 @@
 <main class="container">
     
     <div class="category-header" data-aos="fade-right">
-        <i class="fas fa-code" style="color: var(--primary); font-size: 1.5rem;"></i>
+        <i class="fas fa-code" style="color: var(--primary); font-size: 1.1rem;"></i>
         <h2>Software Based Projects</h2>
         <div class="category-line"></div>
     </div>
@@ -226,69 +257,69 @@
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
             <h3>E-Learning Platform</h3>
-            <p>Adaptive Personalized Learning Platform using AI and Emotion Recognition. Features dynamic curriculum generation and real-time adaptation.</p>
-            <div class="tech-tags"><span class="tag">AI</span><span class="tag">React.js</span><span class="tag">OpenCV</span></div>
+            <p>Adaptive Personalized Learning Platform using AI and Emotion Recognition. Features dynamic curriculum generation.</p>
+            <div class="tech-tags"><span class="tag">AI</span><span class="tag">React.js</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-user-shield"></i></div>
             <h3>AI Security Intel</h3>
-            <p>AI-Powered Ethical Hacking platform that analyzes code, APIs, and database logic to identify risks before deployment.</p>
-            <div class="tech-tags"><span class="tag">Cyber Security</span><span class="tag">AI</span><span class="tag">Intel</span></div>
+            <p>AI-Powered Ethical Hacking platform that analyzes code, APIs, and database logic to identify risks.</p>
+            <div class="tech-tags"><span class="tag">Cyber</span><span class="tag">AI</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-comment-dots"></i></div>
             <h3>Kalix AI</h3>
-            <p>A sophisticated AI chat bot designed to handle user queries efficiently and provide intelligent, context-aware responses.</p>
-            <div class="tech-tags"><span class="tag">NLP</span><span class="tag">AI</span><span class="tag">Chatbot</span></div>
+            <p>Sophisticated AI chat bot designed to handle user queries efficiently and provide intelligent responses.</p>
+            <div class="tech-tags"><span class="tag">NLP</span><span class="tag">AI</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-briefcase"></i></div>
             <h3>BizPilot</h3>
-            <p>Smart digital assistant for business owners. Automates tasks, reminders, client follow-ups, and expenses.</p>
-            <div class="tech-tags"><span class="tag">Automation</span><span class="tag">Business</span></div>
+            <p>Smart digital assistant for business owners. Automates tasks, reminders, and client follow-ups.</p>
+            <div class="tech-tags"><span class="tag">Auto</span><span class="tag">Biz</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-address-card"></i></div>
             <h3>Quick Portfolio Maker</h3>
-            <p>A specialized software tool designed to create professional digital portfolios quickly and easily within a single minute.</p>
-            <div class="tech-tags"><span class="tag">Web Dev</span><span class="tag">Portfolio</span></div>
+            <p>A specialized software tool designed to create professional digital portfolios quickly within a minute.</p>
+            <div class="tech-tags"><span class="tag">Web</span><span class="tag">Dev</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-network-wired"></i></div>
             <h3>Aura: Forensic Lab</h3>
-            <p>A Zero-Trust Forensic Messaging Software built with a multi-stage network node simulator for secure communication.</p>
-            <div class="tech-tags"><span class="tag">Cybersec</span><span class="tag">Zero-Trust</span></div>
+            <p>A Zero-Trust Forensic Messaging Software built with a multi-stage network node simulator.</p>
+            <div class="tech-tags"><span class="tag">Security</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-cloud-sun"></i></div>
-            <h3>Weather Station App</h3>
-            <p>A dedicated software platform for real-time weather monitoring and historical climate data visualization.</p>
+            <h3>Weather App</h3>
+            <p>A dedicated platform for real-time weather monitoring and historical climate data visualization.</p>
             <div class="tech-tags"><span class="tag">API</span><span class="tag">Data</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
             <h3>AutoSense AI</h3>
-            <p>Intelligent monitoring system using FastAPI to track system health and detect anomalies in real-time.</p>
-            <div class="tech-tags"><span class="tag">FastAPI</span><span class="tag">Monitoring</span></div>
+            <p>Intelligent monitoring system using FastAPI to track system health and detect anomalies.</p>
+            <div class="tech-tags"><span class="tag">FastAPI</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-desktop"></i></div>
-            <h3>Desktop AI Assistant</h3>
-            <p>SPINO AI is a "Swiss Army knife" desktop app consolidating multiple AI functionalities into a single platform.</p>
-            <div class="tech-tags"><span class="tag">AI</span><span class="tag">Python</span><span class="tag">Desktop</span></div>
+            <h3>Desktop Assistant</h3>
+            <p>SPINO AI is a "Swiss Army knife" app consolidating multiple AI functionalities.</p>
+            <div class="tech-tags"><span class="tag">Python</span></div>
         </div>
     </div>
 
-    <div class="category-header" data-aos="fade-right" style="margin-top: 100px;">
-        <i class="fas fa-tools" style="color: var(--primary); font-size: 1.5rem;"></i>
+    <div class="category-header" data-aos="fade-right" style="margin-top: 50px;">
+        <i class="fas fa-tools" style="color: var(--primary); font-size: 1.1rem;"></i>
         <h2>Hardware Based Projects</h2>
         <div class="category-line"></div>
     </div>
@@ -296,176 +327,176 @@
     <div class="project-grid">
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-robot"></i></div>
-            <h3>Human Following Robot</h3>
-            <p>Robotic hardware designed to autonomously follow a human using sensor fusion and motor control navigation.</p>
-            <div class="tech-tags"><span class="tag">Arduino</span><span class="tag">Sensors</span></div>
+            <h3>Human Follower</h3>
+            <p>Robotic hardware designed to autonomously follow a human using sensor fusion.</p>
+            <div class="tech-tags"><span class="tag">Arduino</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-wave-square"></i></div>
             <h3>Heart Beat Sensor</h3>
-            <p>Measures heartbeats and uploads readings online via IoT for remote health monitoring and alerts.</p>
+            <p>Measures heartbeats and uploads readings online via IoT for remote monitoring.</p>
             <div class="tech-tags"><span class="tag">IoT</span><span class="tag">Health</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-fire"></i></div>
-            <h3>Fire & Smoke Detector</h3>
-            <p>Detects fire and smoke signatures using advanced sensors and sends real-time emergency alerts via IoT.</p>
-            <div class="tech-tags"><span class="tag">IoT</span><span class="tag">Safety</span></div>
+            <h3>Fire Detector</h3>
+            <p>Detects fire signatures using advanced sensors and sends emergency alerts via IoT.</p>
+            <div class="tech-tags"><span class="tag">Safety</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-user-astronaut"></i></div>
             <h3>Human AI Robot</h3>
-            <p>Advanced robot controllable via smartphone commands from anywhere, allowing remote navigation.</p>
-            <div class="tech-tags"><span class="tag">AI</span><span class="tag">Mobile Control</span></div>
+            <p>Advanced robot controllable via smartphone commands from anywhere remotely.</p>
+            <div class="tech-tags"><span class="tag">Mobile</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-microphone"></i></div>
-            <h3>Voice Controlled Robot</h3>
-            <p>Uses Arduino Uno and DC motors to respond to voice commands for movement and navigation.</p>
-            <div class="tech-tags"><span class="tag">Arduino</span><span class="tag">Voice</span></div>
+            <h3>Voice Control Bot</h3>
+            <p>Uses Arduino Uno and motors to respond to voice commands for navigation.</p>
+            <div class="tech-tags"><span class="tag">Voice</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-car-side"></i></div>
-            <h3>Obstacle Avoiding Car</h3>
+            <h3>Obstacle Car</h3>
             <p>Autonomous vehicle platform that uses ultrasonic sensors to navigate without hitting objects.</p>
-            <div class="tech-tags"><span class="tag">Ultrasonic</span><span class="tag">Car</span></div>
+            <div class="tech-tags"><span class="tag">Car</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-extinguisher"></i></div>
             <h3>Fire Fighting Car</h3>
-            <p>Smart vehicle built on a "Sense-Think-Act" loop to detect heat sources and engage extinguishing mechanisms.</p>
-            <div class="tech-tags"><span class="tag">Robotics</span><span class="tag">Embedded</span></div>
+            <p>Smart vehicle built to detect heat sources and engage extinguishing mechanisms.</p>
+            <div class="tech-tags"><span class="tag">Robots</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-door-open"></i></div>
-            <h3>Smart Door Automation</h3>
-            <p>Arduino-based sensor system that automatically manages door entry/exit upon sensing motion.</p>
-            <div class="tech-tags"><span class="tag">Arduino</span><span class="tag">Home Auto</span></div>
+            <h3>Door Automation</h3>
+            <p>Arduino-based sensor system that automatically manages door entry upon sensing motion.</p>
+            <div class="tech-tags"><span class="tag">Home Auto</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-wifi"></i></div>
             <h3>WiFi Weather Monitor</h3>
-            <p>Sends sensor data to cloud platforms via Wi-Fi for live monitoring on mobile dashboards.</p>
-            <div class="tech-tags"><span class="tag">ESP8266</span><span class="tag">IoT</span></div>
+            <p>Sends data to cloud platforms via Wi-Fi for live monitoring on dashboards.</p>
+            <div class="tech-tags"><span class="tag">ESP8266</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
             <h3>Mobile Operated Car</h3>
-            <p>Uses Bluetooth sensors for movement control via a dedicated mobile interface with stable 4-motor drive.</p>
-            <div class="tech-tags"><span class="tag">Bluetooth</span><span class="tag">Arduino</span></div>
+            <p>Uses Bluetooth sensors for movement control via a dedicated mobile interface.</p>
+            <div class="tech-tags"><span class="tag">Bluetooth</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-trash"></i></div>
             <h3>Smart Dustbin</h3>
-            <p>Eco-friendly smart dustbin that opens and closes automatically when it senses a user nearby.</p>
-            <div class="tech-tags"><span class="tag">Servo</span><span class="tag">Ultrasonic</span></div>
+            <p>Eco-friendly smart bin that opens automatically when sensing a user nearby.</p>
+            <div class="tech-tags"><span class="tag">Servo</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-water"></i></div>
-            <h3>Early Flood Detection</h3>
-            <p>IoT monitoring system using water level, flow, and humidity sensors with mechanical backup.</p>
-            <div class="tech-tags"><span class="tag">Environment</span><span class="tag">IoT</span></div>
+            <h3>Flood Detection</h3>
+            <p>IoT monitoring system using water level, flow, and humidity sensors.</p>
+            <div class="tech-tags"><span class="tag">Environment</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-flask"></i></div>
-            <h3>Water Turbidity Monitor</h3>
-            <p>Measures water quality and clarity using low-cost sensors to identify pollution levels in real-time.</p>
-            <div class="tech-tags"><span class="tag">Sensors</span><span class="tag">Water Quality</span></div>
+            <h3>Turbidity Monitor</h3>
+            <p>Measures water quality and clarity using low-cost sensors to identify pollution.</p>
+            <div class="tech-tags"><span class="tag">Water</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-hand-paper"></i></div>
             <h3>Gesture Recognition</h3>
-            <p>Controls LED outputs through hand gestures using Python, OpenCV, and Arduino Uno.</p>
-            <div class="tech-tags"><span class="tag">OpenCV</span><span class="tag">Gesture</span></div>
+            <p>Controls outputs through hand gestures using Python, OpenCV, and Arduino.</p>
+            <div class="tech-tags"><span class="tag">OpenCV</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-desktop"></i></div>
-            <h3>Gesture Animation Control</h3>
-            <p>Integrates hardware and software to control PC-based animations using simple hand movements.</p>
-            <div class="tech-tags"><span class="tag">HCI</span><span class="tag">Automation</span></div>
+            <h3>Gesture Animation</h3>
+            <p>Integrates hardware to control PC-based animations using simple hand movements.</p>
+            <div class="tech-tags"><span class="tag">HCI</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-headset"></i></div>
             <h3>Autobot X</h3>
-            <p>AI-integrated Voice Control Robot capable of advanced speech processing and command execution.</p>
-            <div class="tech-tags"><span class="tag">AI</span><span class="tag">Voice Robot</span></div>
+            <p>AI-integrated Voice Control Robot capable of advanced speech processing.</p>
+            <div class="tech-tags"><span class="tag">AI Robot</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-faucet"></i></div>
-            <h3>Auto Water Dispenser</h3>
-            <p>Touchless water delivery system using IR sensors and 5V relays for a hygienic solution.</p>
-            <div class="tech-tags"><span class="tag">IR Sensor</span><span class="tag">Automation</span></div>
+            <h3>Water Dispenser</h3>
+            <p>Touchless water delivery system using IR sensors and relays for hygiene.</p>
+            <div class="tech-tags"><span class="tag">IR Sensor</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-recycle"></i></div>
             <h3>Smart Bin (Dry/Wet)</h3>
-            <p>Automatically separates dry and wet garbage to assist in environmental waste management.</p>
-            <div class="tech-tags"><span class="tag">Moisture Sensor</span><span class="tag">Servo</span></div>
+            <p>Automatically separates dry and wet garbage to assist in waste management.</p>
+            <div class="tech-tags"><span class="tag">Moisture</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-shield-virus"></i></div>
-            <h3>Theft Detector System</h3>
-            <p>Automated security system that triggers an alarm upon detecting unauthorized movement.</p>
-            <div class="tech-tags"><span class="tag">PIR Sensor</span><span class="tag">Security</span></div>
+            <h3>Theft Detector</h3>
+            <p>Automated security system that triggers an alarm upon detecting movement.</p>
+            <div class="tech-tags"><span class="tag">Security</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-ruler-horizontal"></i></div>
-            <h3>Distance Measurement</h3>
-            <p>Measures object distance without contact using ultrasonic echo time calculations displayed on LCD.</p>
-            <div class="tech-tags"><span class="tag">Arduino</span><span class="tag">Ultrasonic</span></div>
+            <h3>Distance Measure</h3>
+            <p>Measures distance without contact using ultrasonic echo calculations.</p>
+            <div class="tech-tags"><span class="tag">Ultrasonic</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-signal-slash"></i></div>
-            <h3>BT & Wi-Fi Jammer</h3>
-            <p>Portable device to prevent local signal interference for students studying in noisy environments.</p>
-            <div class="tech-tags"><span class="tag">RF Security</span><span class="tag">Antenna</span></div>
+            <h3>Jammer System</h3>
+            <p>Portable device to prevent local signal interference for studying environments.</p>
+            <div class="tech-tags"><span class="tag">RF Sec</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-glasses"></i></div>
-            <h3>Blind Smart Glasses</h3>
-            <p>Assistive technology that helps visually impaired people navigate objects using sensor feedback.</p>
-            <div class="tech-tags"><span class="tag">Accessibility</span><span class="tag">IoT</span></div>
+            <h3>Blind Glasses</h3>
+            <p>Assistive technology helping visually impaired people navigate objects.</p>
+            <div class="tech-tags"><span class="tag">Accessibility</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-house-chimney-user"></i></div>
-            <h3>Home Automation Hub</h3>
-            <p>Centralized control for lights, fans, and appliances using Arduino and integrated relay circuits.</p>
-            <div class="tech-tags"><span class="tag">Relay</span><span class="tag">Arduino</span></div>
+            <h3>Automation Hub</h3>
+            <p>Centralized control for appliances using Arduino and relay circuits.</p>
+            <div class="tech-tags"><span class="tag">Relay</span></div>
         </div>
 
         <div class="project-card" data-aos="fade-up">
             <div class="project-icon"><i class="fas fa-snowflake"></i></div>
-            <h3>Suitcase Refrigerator</h3>
-            <p>Compact smart cooler with remote mobile temperature settings and humidity monitoring.</p>
-            <div class="tech-tags"><span class="tag">IoT</span><span class="tag">Peltier</span></div>
+            <h3>Suitcase Fridge</h3>
+            <p>Compact smart cooler with remote mobile temperature settings.</p>
+            <div class="tech-tags"><span class="tag">Peltier</span></div>
         </div>
     </div>
 
-    <div style="margin-top: 100px; text-align: center;" data-aos="fade-up">
-        <h2 style="color: var(--header-footer-bg); margin-bottom: 20px;">The Interplay of Software & Hardware</h2>
-        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 40px;">At TechXᴰᴹ, we bridge the physical and digital worlds. Every piece of hardware we build is powered by intelligent software.</p>
+    <div style="margin-top: 50px; text-align: center;" data-aos="fade-up">
+        <h2 style="color: var(--header-footer-bg); margin-bottom: 15px; font-size: 1.3rem;">Hardware & Software Synergy</h2>
+        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto; font-size: 0.85rem; line-height: 1.5;">At TechXᴰᴹ, we bridge the physical and digital worlds with intelligent engineering.</p>
     </div>
 
 </main>
@@ -484,6 +515,28 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const menuIcon = menuBtn.querySelector('i');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        });
+    });
 </script>
 
 </body>
