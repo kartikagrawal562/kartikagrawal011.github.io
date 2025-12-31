@@ -256,10 +256,10 @@
     </a>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="Projects.html">Projects</a></li>
-        <li><a href="Participants.html">Participants</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="participants.html">Participants</a></li>
         <li><a href="vision.html">Vision</a></li>
-        <li><a href="About.html">About</a></li>
+        <li><a href="about.html">About</a></li>
     </ul>
     <div class="menu-icon" id="menuBtn">
         <i class="fas fa-bars"></i>
@@ -314,8 +314,8 @@
 <footer class="organizer-footer">
     <p class="organized-by-text">Organized By</p>
     <div class="organizer-logos">
-        <img src="university.jpg" alt="Swaminarayan University" class="org-logo">
-        <img src="logo12.jpeg" alt="Partner Logo" class="org-logo">
+        <img src="swaminarayan-university-logo.jpg" alt="University" class="org-logo">
+        <img src="logo12.jpeg" alt="Partner" class="org-logo">
     </div>
     <div class="footer-credit" style="margin-top: 20px; font-size: 0.75rem; color: #64748b;">
         <p>&copy; 2025 ELECTROSPHERE. All rights reserved.</p>
@@ -336,7 +336,6 @@
         icon.classList.toggle('fa-times');
     });
 
-    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
